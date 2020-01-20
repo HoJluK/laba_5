@@ -9,14 +9,12 @@ namespace laba_5
 {
     class MAIN
     {
-        enum Janr
+        enum Pos
         {
-            None,
-            Д,
-            К,
-            М,
-            Б,
-            А
+            П,
+            С,
+            А,
+            None
         }
 
 
@@ -155,19 +153,19 @@ namespace laba_5
                             Console.WriteLine("Error. (Введите повторно)");
                             goto Found1;
                         }
-                        Janr pro;
+                        Pos pro;
                     Found3:
                         Console.WriteLine("Введите оклад");
                         try
                         {
                             string blabla3 = Console.ReadLine();
                             t1.Salary = blabla3;
-                            pro = (Janr)Enum.Parse(typeof(Janr), blabla3);
+                            pro = (Pos)Enum.Parse(typeof(Pos), blabla3);
                         }
                         catch (Exception ex)
                         {
                             Console.WriteLine("Error. (Введите повторно)");
-                            pro = Janr.None;
+                            pro = Pos.None;
                             goto Found3;
                         }
 
@@ -225,18 +223,18 @@ namespace laba_5
                                 goto Found2;
                             }
                             Console.WriteLine("Введите новый Тип");
-                            Janr pro2;
+                            Pos pro2;
                         Found4:
                             try
                             {
                                 string blabla4 = Console.ReadLine();
                                 t2.Salary = blabla4;
-                                pro2 = (Janr)Enum.Parse(typeof(Janr), blabla4);
+                                pro2 = (Pos)Enum.Parse(typeof(Pos), blabla4);
                             }
                             catch (Exception ex)
                             {
                                 Console.WriteLine("Error. (Введите повторно)");
-                                pro2 = Janr.None;
+                                pro2 = Pos.None;
                                 goto Found4;
                             }
                             list[UpdateIndex - 1] = t2;
